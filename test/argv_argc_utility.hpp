@@ -1,3 +1,13 @@
+/**
+ * @file argv_argc_utility.hpp
+ * @ingroup Ping_Service
+ * @brief Class for simulating argv,argc for unit tests
+ * continuously
+ *
+ * Copied from //https://github.com/jarro2783/cxxopts/blob/master/test/options.cpp
+ *
+ *
+ */
 #pragma once
 
 #include <initializer_list>

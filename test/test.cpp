@@ -1,3 +1,13 @@
+/**
+ * @file tests.cpp
+ * @ingroup Ping_Service
+ * @brief Main test runner for project wide unit tests
+ *
+ * Copyright (c) 2020 Patrick Servello (patrick.servello@gmail.com)
+ *
+ * Distributed under the Apache license and can be found in LICENSE.txt
+ */
+
 #define CATCH_CONFIG_MAIN
 #include "argv_argc_utility.hpp"
 #include "catch.hpp"
