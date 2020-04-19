@@ -13,6 +13,7 @@ install:
   - cmake ..
 
 script:
+  - sysctl -w net.ipv4.ping_group_range="0 0"
   - make
-  - ./test/TestAll
+  - sudo ./test/TestAll
   - cppcheck --error-exitcode=1 --enable=style,performance,information ../src -I ../src
