@@ -1,4 +1,9 @@
 # pico-ping
+<p align="center">
+   <a href="https://travis-ci.com/patrick--/pico-ping">
+    <img src="https://travis-ci.com/patrick--/pico-ping.svg?branch=master"/> 
+   </a>
+</p>
 
 ### Overview
 Pico-ping is a minimal Linux utility that emulates some of the core functionality of `ping` using a more modern style of C++; 
