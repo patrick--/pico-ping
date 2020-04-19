@@ -18,7 +18,7 @@
 
 namespace pico_ping {
 
-//Ensure that class is usable after construction
+// Ensure that class is usable after construction
 Ping_Service::Ping_Service(const std::string &host, seconds timeout)
     : timeout_(timeout) {
   remote_dest_ = str_to_in_addr(host);
@@ -56,12 +56,12 @@ void Ping_Service::start() {
       continue;
     }
 
-    //Get data from response
+    // Get data from response
     socklen_t slen = 0;
     rc = recvfrom(sock_, data, sizeof(data), 0, NULL, &slen);
     std::memcpy(&icmp_response_header_, data, sizeof(icmp_response_header_));
 
-    //We only care about ECHO_REPLY ICMP packets, ignore all other types
+    // We only care about ECHO_REPLY ICMP packets, ignore all other types
     if (icmp_response_header_.type == ICMP_ECHOREPLY) {
       int recvd_seq = icmp_response_header_.un.echo.sequence;
       std::cout << std::fixed << std::setprecision(2);
@@ -114,26 +114,26 @@ void Ping_Service::socket_init() {
     throw std::runtime_error("Unable to create socket");
   }
 
-  //Setup remote address fields
+  // Setup remote address fields
   std::memset(&addr_, 0, sizeof(addr_));
   addr_.sin_family = AF_INET;
   addr_.sin_addr = remote_dest_;
 
-  //Setup packet to send fields
+  // Setup packet to send fields
   std::memset(&icmp_header_, 0, sizeof(icmp_header_));
   icmp_header_.type = ICMP_ECHO;
   icmp_header_.un.echo.id = 1337;
 }
 
-//Add an entry to hashmap with a timepoint and a given packet sequence
+// Add an entry to hashmap with a timepoint and a given packet sequence
 void Ping_Service::log_echo_sent_time(int sequence) {
   echo_sent_times_.insert({sequence, steady_clock::now()});
 }
 
-//Delete all entries in the hashmap
+// Delete all entries in the hashmap
 void Ping_Service::clear_echo_sent_times() { echo_sent_times_.clear(); }
 
-//Calculate a duration based on a now time point and the logged time point
+// Calculate a duration based on a now time point and the logged time point
 duration<double, std::milli> Ping_Service::get_packet_rtt(int sequence) {
   return steady_clock::now() - echo_sent_times_[sequence];
 }

@@ -3,8 +3,8 @@
  * @ingroup Ping_Service
  * @brief Basic command line parsing functionality
  *
- * This file acts as a thin wrapper around cxxopts to allow for easier testability
- * and to limit functionality that we aren't using at the moment.
+ * This file acts as a thin wrapper around cxxopts to allow for easier
+ * testability and to limit functionality that we aren't using at the moment.
  *
  * Copyright (c) 2020 Patrick Servello (patrick.servello@gmail.com)
  *
@@ -26,7 +26,7 @@ namespace cli {
 /**
  * @brief Reusable structure to hold all current and future command line params
  *
-*/
+ */
 struct command_parameters {
   std::string host;
   seconds timeout;
@@ -37,8 +37,8 @@ struct command_parameters {
  * to pass to ping service
  *
  * This is what acts as a thin wrapper around cxxopts. If an invalid option flag
- * is provided, or if the positional host parameter is ommited, an exception will
- * be thrown.
+ * is provided, or if the positional host parameter is ommited, an exception
+ * will be thrown.
  *
  * @param[in] argc Argument count from the commandline
  * @param[in] argv Argument array from the commandline

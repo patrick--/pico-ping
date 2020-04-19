@@ -3,23 +3,24 @@
  * @ingroup Ping_Service
  * @brief Basic command line parsing functionality
  *
- * This file acts as a thin wrapper around cxxopts to allow for easier testability
- * and to limit functionality that we aren't using at the moment.
+ * This file acts as a thin wrapper around cxxopts to allow for easier
+ * testability and to limit functionality that we aren't using at the moment.
  *
  * Copyright (c) 2020 Patrick Servello (patrick.servello@gmail.com)
  *
  * Distributed under the Apache license and can be found in LICENSE.txt
  */
 
-#include <iomanip>
 #include "cli.h"
+#include <iomanip>
 
 namespace pico_ping {
 namespace cli {
 command_parameters get_input(int argc, char **argv) {
 
   cxxopts::Options options("pico_ping", "IMCP echo sender");
-  //Create option values for cxxopts object, ignore help strings since we take care of them
+  // Create option values for cxxopts object, ignore help strings since we take
+  // care of them
   options.add_options()("host", "", cxxopts::value<std::string>())(
       "W,timeout", "Response packet timeout [sec]",
       cxxopts::value<int>()->default_value("5"));
