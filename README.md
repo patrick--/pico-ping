@@ -1,5 +1,9 @@
 # pico-ping
 <p align="center">
+   <img src="doc/ping.gif"/> 
+</p>
+
+<p align="center">
    <a href="https://travis-ci.com/patrick--/pico-ping">
     <img src="https://travis-ci.com/patrick--/pico-ping.svg?branch=master"/> 
    </a>
