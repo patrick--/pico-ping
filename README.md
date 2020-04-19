@@ -1,7 +1,7 @@
 # pico-ping
 
 ### Overview
-Pico-ping is a minimal Linux utility that emulates some of the core functionality of `ping`. 
+Pico-ping is a minimal Linux utility that emulates some of the core functionality of `ping` using a more modern style of C++; 
 
 Specific functionality implemented at this time:
 * Positional argument for either hostname or ipaddress
@@ -33,10 +33,12 @@ Specific functionality implemented at this time:
 
 
 1) Clone repo
-    - `git clone https://github.com/patrick--/pico-ping`
+
+    ```git clone https://github.com/patrick--/pico-ping```
     
 2) Move into clone repo
-    - `cd pico-ping`
+
+    ```cd pico-ping```
     
 3) Create build directory and generate build dependencies
      ```sh
@@ -55,10 +57,4 @@ Specific functionality implemented at this time:
      make pico_ping
      sudo ./app/pico_ping google.com --timeout 5
      ```
-     
-
-
-
-
-
-
+    
